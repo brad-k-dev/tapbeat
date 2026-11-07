@@ -1,0 +1,40 @@
+:root { --bg:#0a0818; --card:#1e1840; --raised:#2a2358; --ink:#f8f6ff; --dim:#a09acb; --soft:#cfc9f0; --line:#3a3170;
+  --pink:#ff5ad9; --violet:#9d6bff; --cyan:#4cc9ff; --link:#b59bff; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; color: var(--ink); background: var(--bg) radial-gradient(1200px 600px at 50% -10%, #1a0e40, var(--bg)) no-repeat;
+  font: 400 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", system-ui, sans-serif; }
+/* Only the selected language is shown; Korean is the default (also without JavaScript). */
+body[data-lang] [lang] { display: none !important; }
+body[data-lang="ko"] [lang="ko"], body[data-lang="en"] [lang="en"] { display: revert !important; }
+body[data-lang="ko"] .shots[lang="ko"], body[data-lang="en"] .shots[lang="en"] { display: grid !important; }
+a { color: var(--link); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+.narrow { max-width: 760px; padding-top: 48px; padding-bottom: 32px; }
+header { text-align: center; padding: 56px 0 24px; }
+header img { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 0 40px rgba(255,90,217,.35); }
+h1 { font-size: 40px; margin: 22px 0 6px; font-weight: 800; letter-spacing: -.5px; }
+.grad { background: linear-gradient(90deg, var(--pink), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub { color: var(--soft); margin: 0; font-size: 18px; }
+.soon { display: inline-block; margin: 18px 0 0; padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line); color: var(--dim); font-size: 14px; }
+.bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 0 0 28px; }
+header .bar { justify-content: center; margin: 24px 0 0; }
+.langs { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--card); }
+.langs button { font: inherit; font-size: 14px; padding: 7px 16px; border: 0; background: transparent; color: var(--dim); cursor: pointer; }
+.langs button[aria-pressed="true"] { background: linear-gradient(90deg, var(--pink), var(--violet)); color: #fff; }
+.back { padding: 7px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: 14px; }
+.shots { grid-template-columns: repeat(6, 1fr); gap: 12px; margin: 32px 0; }
+.shots img { width: 100%; border-radius: 16px; border: 1px solid var(--line); display: block; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 22px 22px 10px; margin: 0 0 28px; }
+h2 { font-size: 22px; margin: 0 0 12px; color: var(--pink); }
+h3 { font-size: 16px; margin: 22px 0 6px; color: var(--cyan); }
+p, li { margin: 0 0 10px; }
+ul { padding-left: 20px; }
+.mail { font-size: 18px; }
+.when { color: var(--dim); font-size: 14px; margin: 0 0 20px; }
+table { width: 100%; border-collapse: collapse; margin: 4px 0 16px; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--soft); font-weight: 600; white-space: nowrap; background: var(--raised); }
+.scroll { overflow-x: auto; }
+footer { color: var(--dim); font-size: 14px; border-top: 1px solid var(--line); padding: 20px 0 48px; text-align: center; }
+@media (max-width: 640px) { h1 { font-size: 32px; } .shots { grid-template-columns: repeat(2, 1fr); } }
